@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Image } from 'react-native';
 import { Product } from '../types';
-import Colors from '../constants/Colors';
-import Constants from '../constants/Constants';
+import Colors from '@/constants/Colors';
+import Constants from '@/constants/Constants';
 
 const ProductListItem = ({ product } : { product: Product }) => {
 
