@@ -10,7 +10,7 @@ const ProductListItem = ({ product } : { product: Product }) => {
       <Image
        source={{ uri: product.image || Constants.defaultPizzaImage}}
        style={styles.image}
-       resizeMode="contain"
+       resizeMode='contain'
       />
       <Text style={styles.title}>{product.name}</Text>
       <Text style={styles.price}>{product.price.toFixed(2)}</Text>
@@ -23,9 +23,10 @@ export default ProductListItem;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    overflow: 'hidden',
     padding: 10,
     borderRadius: 20,
+    flex: 1,
+    maxWidth: '50%'
   },
   title: {
     fontSize: 20,
