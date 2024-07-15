@@ -1,20 +1,23 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, Image, Pressable } from 'react-native';
 import { Product } from '../types';
 import Colors from '@/constants/Colors';
 import Constants from '@/constants/Constants';
+import { Link } from 'expo-router';
 
 const ProductListItem = ({ product } : { product: Product }) => {
 
 	return (
-    <View style={styles.container}>
-      <Image
-       source={{ uri: product.image || Constants.defaultPizzaImage}}
-       style={styles.image}
-       resizeMode='contain'
-      />
-      <Text style={styles.title}>{product.name}</Text>
-      <Text style={styles.price}>{product.price.toFixed(2)}</Text>
-    </View>
+    <Link href={`/${product.id}`} asChild>
+      <Pressable style={styles.container}>
+        <Image
+        source={{ uri: product.image || Constants.defaultPizzaImage}}
+        style={styles.image}
+        resizeMode='contain'
+        />
+        <Text style={styles.title}>{product.name}</Text>
+        <Text style={styles.price}>{product.price.toFixed(2)}</Text>
+      </Pressable>
+    </Link>
   )
 }
 
