@@ -1,8 +1,8 @@
 import { View, Text, Image, StyleSheet } from 'react-native';
-import React from 'react';
 import { Stack, useLocalSearchParams } from 'expo-router';
 import products from 'assets/data/products';
 import Constants from '@/constants/Constants';
+import SizeSelector from '@/components/SizeSelector';
 
 export default function ProductDetailsScreen() {
   const {id} = useLocalSearchParams();
@@ -24,6 +24,7 @@ export default function ProductDetailsScreen() {
         source={{ uri: product.image || Constants.defaultPizzaImage}}
         style={styles.image}
       />
+      <SizeSelector />
       <Text style={styles.price}> ${product.price}</Text>
     </View>
   )
