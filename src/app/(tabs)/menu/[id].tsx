@@ -3,10 +3,15 @@ import { Stack, useLocalSearchParams } from 'expo-router';
 import products from 'assets/data/products';
 import Constants from '@/constants/Constants';
 import SizeSelector from '@/components/SizeSelector';
+import Button from '@/components/Button';
 
 export default function ProductDetailsScreen() {
   const {id} = useLocalSearchParams();
   const product = products.find(p => p.id.toString() === id);
+  const addToCart = () => {
+    if (!product) return;
+    console.warn('Add to cart');
+  };
 
   if(!product) {
     return (
@@ -26,6 +31,7 @@ export default function ProductDetailsScreen() {
       />
       <SizeSelector />
       <Text style={styles.price}> ${product.price}</Text>
+      <Button onPress={addToCart} text="Add to cart" />
     </View>
   )
 }
