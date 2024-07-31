@@ -35,7 +35,7 @@ export default function ProductDetailsScreen() {
         source={{ uri: product.image || Constants.defaultPizzaImage}}
         style={styles.image}
       />
-      <SizeSelector />
+      <SizeSelector onPressSelect={size => setSelectedSize(size)} selectedSize={selectedSize}/>
       <Text style={styles.price}> ${product.price}</Text>
       <Button onPress={addToCart} text="Add to cart" />
     </View>

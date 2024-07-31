@@ -1,9 +1,13 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native'
-import { useState } from 'react';
+import { PizzaSize } from '@/types';
 
-export default function SizeSelector() {
-  const sizes = ['S', 'M', 'L', 'XL'];
-  const [selectedSize, setSelectedSize] = useState('M');
+type SizeSelectorProps = {
+  onPressSelect: (size: PizzaSize) => void,
+  selectedSize: string
+};
+
+export default function SizeSelector({onPressSelect, selectedSize}: SizeSelectorProps) {
+  const sizes : PizzaSize[] = ['S', 'M', 'L', 'XL'];
 
   return (
     <View>
@@ -12,7 +16,7 @@ export default function SizeSelector() {
       {
         sizes.map(size => (
           <Pressable
-            onPress={() => setSelectedSize(size)}
+            onPress={() => onPressSelect(size)}
             style={[
               styles.size,
               {
