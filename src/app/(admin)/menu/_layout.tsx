@@ -8,7 +8,7 @@ export default function MenuLayout() {
     <Stack.Screen name="index" options={{
       title: 'Menu',
       headerRight: () => (
-        <Link href="/cart" asChild>
+        <Link href="/menu/create" asChild>
           <Pressable>
             {({ pressed }) => (
               <FontAwesome
