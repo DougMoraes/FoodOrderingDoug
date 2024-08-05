@@ -5,16 +5,36 @@ import { View, Text, TextInput, StyleSheet } from 'react-native'
 export default function CreateProductScreen() {
   const [name, setName] = useState('');
   const [price, setPrice] = useState('');
+  const [error, setError] = useState('');
+
 
   const onCreatePress = () => {
-    console.warn(`Creating ${name} pizza that costs ${price}`)
+    if (!validateInputs()) {
+      return false;
+    }
 
-    resetFields()
+    console.warn(`Creating ${name} pizza that costs ${price}`);
+    resetFields();
   };
 
   const resetFields = () => {
-    setName('')
-    setPrice('')
+    setName('');
+    setPrice('');
+    setError('');
+  }
+
+  const validateInputs = () => {
+    if(name.length === 0) {
+      setError('Missing name!')
+    } else if (price.length === 0) {
+      setError('Missing price!')
+    } else if (isNaN(parseFloat(price))) {
+      setError('Price is not a number!')
+    } else {
+      return true;
+    }
+
+    return false;
   }
 
   return (
@@ -34,6 +54,7 @@ export default function CreateProductScreen() {
         keyboardType='numeric'
         onChangeText={setPrice}
       />
+      <Text style={{color: 'red'}}>{error}</Text>
       <Button
         text={'Create'}
         onPress={onCreatePress}
