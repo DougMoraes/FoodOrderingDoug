@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { View, Text, TextInput, StyleSheet, Image } from 'react-native'
+import { View, Text, TextInput, StyleSheet, Image, Alert } from 'react-native'
 import * as ImagePicker from 'expo-image-picker';
 import Button from '@/components/Button';
 import Colors from '@/constants/Colors';
 import Constants from '@/constants/Constants';
-import { Stack } from 'expo-router';
+import { Stack, useLocalSearchParams } from 'expo-router';
 
 export default function CreateProductScreen() {
   const [image, setImage] = useState('');
@@ -12,6 +12,8 @@ export default function CreateProductScreen() {
   const [price, setPrice] = useState('');
   const [error, setError] = useState('');
 
+  const {id} = useLocalSearchParams();
+  const mainText = !id ? 'Create' : 'Update'
 
   const onCreatePress = () => {
     if (!validateInputs()) {
@@ -20,6 +22,19 @@ export default function CreateProductScreen() {
 
     console.warn(`Creating ${name} pizza that costs ${price}`);
     resetFields();
+  };
+
+  const onUpdatePress = () => {
+    if (!validateInputs()) {
+      return false;
+    }
+
+    console.warn(`Creating ${name} pizza that costs ${price}`);
+    resetFields();
+  };
+
+  const onSubmit = () => {
+    return id ? onUpdatePress() : onCreatePress();
   };
 
   const resetFields = () => {
@@ -55,9 +70,26 @@ export default function CreateProductScreen() {
     }
   };
 
+  const onDelete = () => {
+    console.warn(`Delete`);
+
+  };
+  const confirmDelete = () => {
+    Alert.alert('Confirm', 'Delete', [
+      {
+        text: 'Cancel',
+      },
+      {
+        text: 'Delete',
+        style: 'destructive',
+        onPress: onDelete
+      }
+    ])
+  };
+
   return (
     <View style={styles.container}>
-      <Stack.Screen options={{ title: 'Create Product' }}/>
+      <Stack.Screen options={{ title: `${mainText} Product` }}/>
       <Image
         source={{ uri: image || Constants.defaultPizzaImage}}
         style={styles.image}
@@ -85,9 +117,19 @@ export default function CreateProductScreen() {
       />
       <Text style={{color: 'red'}}>{error}</Text>
       <Button
-        text='Create'
-        onPress={onCreatePress}
+        text={mainText}
+        onPress={onSubmit}
       />
+      {
+        id && (
+          <Text
+            style={styles.textButton}
+            onPress={confirmDelete}
+          >
+            Delete
+          </Text>
+        )
+      }
     </View>
   )
 }
