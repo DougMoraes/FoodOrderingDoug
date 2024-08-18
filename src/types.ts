@@ -30,11 +30,10 @@ export type Order = {
   total: number;
   user_id: string;
   status: OrderStatus;
-
-  order_items?: OrderItem[];
+  order_items?: OrderItemType[];
 };
 
-export type OrderItem = {
+export type OrderItemType = {
   id: number;
   product_id: number;
   products: Product;
