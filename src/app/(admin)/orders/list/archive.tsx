@@ -1,9 +1,9 @@
 import { View, FlatList } from 'react-native';
 import { Stack } from 'expo-router';
-import OrderListItem from '../../../components/OrderListItem';
+import OrderListItem from '../../../../components/OrderListItem';
 import orders from 'assets/data/orders';
 
-export default function OrdersScreen() {
+export default function OrdersArchiveScreen() {
   return (
     <View>
       <Stack.Screen options={{ headerShown: false }}/>
