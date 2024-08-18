@@ -3,11 +3,14 @@ import { Stack, useLocalSearchParams } from 'expo-router';
 import orders from 'assets/data/orders';
 import OrderItem from '@/components/OrderItem';
 import OrderListItem from '@/components/OrderListItem';
+import StatusSelector from '@/components/StatusSelector';
+import { useState } from 'react';
 
 
 export default function ProductDetailsScreen() {
   const {id} = useLocalSearchParams();
   const order = orders.find(o => o.id.toString() === id);
+  const [selectedStatus, setSelectedStatus] = useState('New');
 
   if(!order) {
     return (
@@ -26,6 +29,7 @@ export default function ProductDetailsScreen() {
         renderItem={({item}) => <OrderItem item={item}/>}
         contentContainerStyle={{gap: 10, padding: 10}}
         ListHeaderComponent={<OrderListItem order={order}/>}
+        ListFooterComponent={<StatusSelector selectedStatus={selectedStatus} onPressSelect={(s) => {setSelectedStatus(s)}}/>}
       />
     </View>
   )
