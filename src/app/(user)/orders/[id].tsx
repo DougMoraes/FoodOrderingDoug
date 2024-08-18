@@ -21,11 +21,11 @@ export default function ProductDetailsScreen() {
   return (
     <View style={styles.container}>
       <Stack.Screen options={{ title: `Order #${order.id}`}}/>
-      <OrderListItem order={order}/>
       <FlatList
         data={order.order_items}
         renderItem={({item}) => <OrderItem item={item}/>}
         contentContainerStyle={{gap: 10, padding: 10}}
+        ListHeaderComponent={<OrderListItem order={order}/>}
       />
     </View>
   )
