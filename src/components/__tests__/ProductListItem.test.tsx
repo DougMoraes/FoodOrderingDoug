@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react-native';
+import { act, render, screen } from '@testing-library/react-native';
 import { renderRouter } from 'expo-router/testing-library';
 
 import ProductListItem from '../ProductListItem';
@@ -19,7 +19,9 @@ describe('ProductListItem', () => {
     const renderedName = screen.getAllByText(getAsRegExp(mockProduct.name));
     const renderedPrice = screen.getAllByText(getAsRegExp(mockProduct.price));
 
-    expect(renderedName.length).toBe(1);
-    expect(renderedPrice.length).toBe(1);
+    await act(async () => {
+      expect(renderedName.length).toBe(1);
+      expect(renderedPrice.length).toBe(1);
+    })
   });
 });

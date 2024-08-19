@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react-native';
+import { act, render, screen } from '@testing-library/react-native';
 import dayjs from 'dayjs';
 import { renderRouter } from 'expo-router/testing-library';
 
@@ -35,7 +35,10 @@ test('shoud render OrderListItem', async () => {
   const renderedDate = screen.getAllByText(getAsRegExp(dayjs(orderMock.created_at).fromNow()));
   const renderedStatus = screen.getAllByText(getAsRegExp(orderMock.status));
 
-  expect(renderedTitle.length).toBe(1);
-  expect(renderedDate.length).toBe(1);
-  expect(renderedStatus.length).toBe(1);
+  await act(async () => {
+    expect(renderedTitle.length).toBe(1);
+    expect(renderedDate.length).toBe(1);
+    expect(renderedStatus.length).toBe(1);
+  })
+
 });
