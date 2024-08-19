@@ -1,8 +1,9 @@
-import { StyleSheet, Text, View, Pressable } from 'react-native';
-import { Order } from '../types';
-import { Link, useSegments } from 'expo-router';
 import dayjs from 'dayjs';
 import relativeTime from "dayjs/plugin/relativeTime";
+import { Link, useSegments } from 'expo-router';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
+
+import { Order } from '../types';
 
 const OrderListItem = ({ order } : { order: Order }) => {
   const segments = useSegments()

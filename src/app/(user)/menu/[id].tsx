@@ -1,10 +1,11 @@
-import { useState } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
-import { Stack, useLocalSearchParams } from 'expo-router';
 import products from 'assets/data/products';
-import Constants from '@/constants/Constants';
-import SizeSelector from '@/components/SizeSelector';
+import { Stack, useLocalSearchParams } from 'expo-router';
+import { useState } from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native';
+
 import Button from '@/components/Button';
+import SizeSelector from '@/components/SizeSelector';
+import Constants from '@/constants/Constants';
 import { useCart } from '@/providers/CartProvider';
 import { PizzaSize } from '@/types';
 

@@ -1,10 +1,12 @@
-import { View, Text, StyleSheet, Image } from 'react-native';
-import React from 'react';
-import Colors from '../constants/Colors';
-import { CartItem } from '../types';
 import { FontAwesome } from '@expo/vector-icons';
-import { useCart } from '../providers/CartProvider';
+import React from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native';
+
 import Constants from '@/constants/Constants';
+
+import Colors from '../constants/Colors';
+import { useCart } from '../providers/CartProvider';
+import { CartItem } from '../types';
 
 type CartListItemProps = {
   cartItem: CartItem;

@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react-native';
+
 import Button from '../Button';
 import { getAsRegExp } from './__utils__/utils';
 

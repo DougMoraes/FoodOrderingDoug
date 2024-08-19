@@ -1,6 +1,7 @@
-import { View, FlatList } from 'react-native';
-import ProductListItem from '../../../components/ProductListItem';
 import products from 'assets/data/products';
+import { FlatList, View } from 'react-native';
+
+import ProductListItem from '../../../components/ProductListItem';
 
 export default function MenuScreen() {
   return (

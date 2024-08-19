@@ -1,7 +1,8 @@
-import { View } from 'react-native';
-import React from 'react';
-import Button from '../components/Button';
 import { Link } from 'expo-router';
+import React from 'react';
+import { View } from 'react-native';
+
+import Button from '../components/Button';
 
 const index = () => {
   return (

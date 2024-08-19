@@ -1,7 +1,9 @@
-import { StyleSheet, Text, View, Image } from 'react-native';
-import { OrderItemType } from '../types';
-import Constants from '@/constants/Constants';
+import { Image, StyleSheet, Text, View } from 'react-native';
+
 import Colors from '@/constants/Colors';
+import Constants from '@/constants/Constants';
+
+import { OrderItemType } from '../types';
 
 const OrderItem = ({ item } : { item: OrderItemType }) => {
 	return (

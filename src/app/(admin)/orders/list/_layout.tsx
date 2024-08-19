@@ -1,5 +1,5 @@
-import { withLayoutContext } from 'expo-router';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { withLayoutContext } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Tabs = withLayoutContext(createMaterialTopTabNavigator().Navigator);

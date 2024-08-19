@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react-native';
-import CartListItem from '../CartListItem';
+
 import { PizzaSize } from '@/types';
-import { getAsRegExp } from './__utils__/utils';
+
+import CartListItem from '../CartListItem';
 import { mockProduct } from './__utils__/data';
+import { getAsRegExp } from './__utils__/utils';
 
 test('shoud render CartListItem', async () => {
 

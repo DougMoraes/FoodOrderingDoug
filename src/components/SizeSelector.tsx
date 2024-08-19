@@ -1,4 +1,5 @@
-import { View, Text, StyleSheet, Pressable } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
+
 import { PizzaSize } from '@/types';
 
 type SizeSelectorProps = {

@@ -1,10 +1,11 @@
-import { View, Text, StyleSheet, FlatList } from 'react-native';
-import { Stack, useLocalSearchParams } from 'expo-router';
 import orders from 'assets/data/orders';
+import { Stack, useLocalSearchParams } from 'expo-router';
+import { useState } from 'react';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
+
 import OrderItem from '@/components/OrderItem';
 import OrderListItem from '@/components/OrderListItem';
 import StatusSelector from '@/components/StatusSelector';
-import { useState } from 'react';
 
 
 export default function ProductDetailsScreen() {

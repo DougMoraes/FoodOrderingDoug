@@ -1,8 +1,9 @@
+import { Stack } from 'expo-router';
 import { useState } from 'react'
-import { View, Text, TextInput, StyleSheet } from 'react-native'
+import { StyleSheet, Text, TextInput, View } from 'react-native'
+
 import Button from '@/components/Button';
 import Colors from '@/constants/Colors';
-import { Stack } from 'expo-router';
 
 export default function SignIScreen() {
   const [email, setEmail] = useState('');

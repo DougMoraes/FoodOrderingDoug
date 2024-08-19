@@ -1,10 +1,11 @@
-import { useState } from 'react'
-import { View, Text, TextInput, StyleSheet, Image, Alert } from 'react-native'
 import * as ImagePicker from 'expo-image-picker';
+import { Stack, useLocalSearchParams } from 'expo-router';
+import { useState } from 'react'
+import { Alert, Image, StyleSheet, Text, TextInput, View } from 'react-native'
+
 import Button from '@/components/Button';
 import Colors from '@/constants/Colors';
 import Constants from '@/constants/Constants';
-import { Stack, useLocalSearchParams } from 'expo-router';
 
 export default function CreateProductScreen() {
   const [image, setImage] = useState('');

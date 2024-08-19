@@ -1,9 +1,10 @@
-import { View, Text, Image, StyleSheet, Pressable } from 'react-native';
-import { Link, Stack, useLocalSearchParams } from 'expo-router';
-import products from 'assets/data/products';
-import Constants from '@/constants/Constants';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+import products from 'assets/data/products';
+import { Link, Stack, useLocalSearchParams } from 'expo-router';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+
 import Colors from '@/constants/Colors';
+import Constants from '@/constants/Constants';
 
 export default function ProductDetailsScreen() {
   const {id} = useLocalSearchParams();

@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react-native';
-import { getAsRegExp } from './__utils__/utils';
-import { mockProduct } from './__utils__/data';
 import { renderRouter } from 'expo-router/testing-library';
+
 import ProductListItem from '../ProductListItem';
+import { mockProduct } from './__utils__/data';
+import { getAsRegExp } from './__utils__/utils';
 
 describe('ProductListItem', () => {
   test('shoud render', async () => {

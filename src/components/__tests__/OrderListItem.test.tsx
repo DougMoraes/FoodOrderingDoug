@@ -1,10 +1,12 @@
 import { render, screen } from '@testing-library/react-native';
-import { OrderStatus } from '@/types';
-import { getAsRegExp } from './__utils__/utils';
-import { mockOrder } from './__utils__/data';
-import OrderListItem from '../OrderListItem';
-import { renderRouter } from 'expo-router/testing-library';
 import dayjs from 'dayjs';
+import { renderRouter } from 'expo-router/testing-library';
+
+import { OrderStatus } from '@/types';
+
+import OrderListItem from '../OrderListItem';
+import { mockOrder } from './__utils__/data';
+import { getAsRegExp } from './__utils__/utils';
 
 test('shoud render OrderListItem', async () => {
   // This test is causing the warning:

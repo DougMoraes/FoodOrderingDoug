@@ -1,7 +1,9 @@
 import { render, screen } from '@testing-library/react-native';
+
 import OrderItem from '@/components/OrderItem';
-import { getAsRegExp } from './__utils__/utils';
+
 import { mockOrder } from './__utils__/data';
+import { getAsRegExp } from './__utils__/utils';
 
 test('shoud render OrderItem', async () => {
   render(<OrderItem item={mockOrder}/>)

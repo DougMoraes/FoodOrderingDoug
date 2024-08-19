@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { Platform, FlatList, Text } from 'react-native';
-import { View } from '@/components/Themed';
+import { FlatList, Platform, Text } from 'react-native';
+
 import Button from '@/components/Button';
 import CartListItem from '@/components/CartListItem';
+import { View } from '@/components/Themed';
 import { useCart } from '@/providers/CartProvider';
 
 export default function CartScreen() {

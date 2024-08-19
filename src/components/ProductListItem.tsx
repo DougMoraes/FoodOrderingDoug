@@ -1,8 +1,10 @@
-import { StyleSheet, Text, Image, Pressable } from 'react-native';
-import { Product } from '../types';
+import { Link, useSegments } from 'expo-router';
+import { Image, Pressable, StyleSheet, Text } from 'react-native';
+
 import Colors from '@/constants/Colors';
 import Constants from '@/constants/Constants';
-import { Link, useSegments } from 'expo-router';
+
+import { Product } from '../types';
 
 const ProductListItem = ({ product } : { product: Product }) => {
   const segments = useSegments()
