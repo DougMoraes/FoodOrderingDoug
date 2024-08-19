@@ -7,8 +7,8 @@ type ButtonProps = {
   text: string;
 } & React.ComponentPropsWithoutRef<typeof Pressable>;
 
-const Button = forwardRef<View | null, ButtonProps>(
-  ({ text, ...pressableProps }, ref) => {
+const ButtonBase = (
+  ({ text, ...pressableProps }: ButtonProps, ref: React.ForwardedRef<View | null>) => {
     return (
       <Pressable ref={ref} {...pressableProps} style={styles.container}>
         <Text style={styles.text}>{text}</Text>
@@ -16,6 +16,10 @@ const Button = forwardRef<View | null, ButtonProps>(
     );
   }
 );
+
+const Button = forwardRef(ButtonBase);
+
+export default Button;
 
 const styles = StyleSheet.create({
   container: {
@@ -31,5 +35,3 @@ const styles = StyleSheet.create({
     color: 'white',
   },
 });
-
-export default Button;
