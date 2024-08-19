@@ -7,8 +7,7 @@ import { mockProduct } from './__utils__/data';
 test('shoud render OrderItem', async () => {
   const orderMock = {
     id: 1,
-    product_id: 1,
-    products: mockProduct,
+    product: mockProduct,
     order_id: 1,
     size: 'L' as PizzaSize,
     quantity: 1,
@@ -16,8 +15,8 @@ test('shoud render OrderItem', async () => {
 
   render(<OrderItem item={orderMock}/>)
 
-  const renderedName = screen.getAllByText(getAsRegExp(orderMock.products.name));
-  const renderedPrice = screen.getAllByText(getAsRegExp(orderMock.products.price));
+  const renderedName = screen.getAllByText(getAsRegExp(orderMock.product.name));
+  const renderedPrice = screen.getAllByText(getAsRegExp(orderMock.product.price));
   const renderedSize = screen.getAllByText(getAsRegExp(orderMock.size));
   const renderedQuantity = screen.getAllByText(getAsRegExp(orderMock.quantity));
 

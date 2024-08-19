@@ -7,14 +7,14 @@ const OrderItem = ({ item } : { item: OrderItemType }) => {
 	return (
     <View style={styles.container}>
       <View style={styles.imageInnerContainer}>
-        <Image source={{uri: item.products.image || Constants.defaultPizzaImage}} style={styles.image}/>
+        <Image source={{uri: item.product.image || Constants.defaultPizzaImage}} style={styles.image}/>
       </View>
       <View style={{flexDirection: 'column'}}>
         <View style={styles.innerContainer}>
-          <Text style={styles.title}>{item.products.name}</Text>
+          <Text style={styles.title}>{item.product.name}</Text>
         </View>
         <View style={styles.innerContainer}>
-          <Text style={styles.price}>{`$${item.products.price}`}</Text>
+          <Text style={styles.price}>{`$${item.product.price}`}</Text>
           <Text style={styles.title}>{`Size: ${item.size}`}</Text>
         </View>
       </View>
