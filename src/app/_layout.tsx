@@ -8,7 +8,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 
 import { useColorScheme } from '@/components/useColorScheme';
-import CartProvider from '@/providers/CartProvider';
+import { CartProvider } from '@/providers/CartProvider';
 
 export {
   // Catch any errors thrown by the Layout component.
